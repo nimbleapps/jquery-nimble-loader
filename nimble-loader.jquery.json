@@ -1,0 +1,31 @@
+{
+	"name": "nimble-loader",
+	"version": "2.0.0",
+	"title": "Nimble Loader - Loading bar generator",
+	"description": "Display a loading bar in whatever block element you want",
+	"keywords": ["loading", "loading-bar", "loader", "ajax-request"], 
+	"author": {  
+		"name": "Nimble Apps",
+		"email": "dev@nimble-apps.com",
+		"url": "https://github.com/nimbleapps"
+	},
+	"maintainers": [
+		{
+			"name": "Christophe Laborier",
+			"email": "c.laborier@nimble-apps.com"
+		}
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
+	],
+	"dependencies":{
+		"jquery": "1.7.1"
+	},
+	"bugs": "https://github.com/nimbleapps/jquery-nimble-loader/issues",
+	"homepage": "https://github.com/nimbleapps/jquery-nimble-loader",
+	"docs": "https://github.com/nimbleapps/jquery-nimble-loader",
+	"demo": "http://www.salesclic.com/jquery.nimble.loader/demo/"
+}

@@ -1,0 +1,17 @@
+.loading_bar_1 {
+  position: absolute;
+  display: none;
+  height: 100%;
+  width: 100%;
+  background: transparent url(../images/ajax-loader-1.gif) no-repeat 50% 50%;
+}
+
+.loading_bar_body {
+  position: fixed;
+  display: none;
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
+  background: url(../images/ajax-loader-2.gif) no-repeat 50% 50%;
+}

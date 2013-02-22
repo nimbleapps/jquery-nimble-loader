@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta name="Author" content="Christophe Laborier" />
+    <meta name="description" content="Demo page for jquery.nimble.loader : Display a loading bar in whatever block element you want">
+
+
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"         ></script>
+    <script type="text/javascript" src="js/demo.js"                     ></script>
+    <script type="text/javascript" src="../jquery.nimble.loader.js"     ></script>
+
+    <link rel="stylesheet" href="style/style.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="style/loader.css" media="screen" type="text/css" />
+
+    <title>JQuery nimble loader</title>
+  </head>
+  <body>
+    <div id="header">
+      <a href="http://www.salesclic.com" target="_blank">
+        <img src="images/logo-nimble-apps.png" alt="Logo Nimble Apps" />
+      </a>
+    </div>
+
+    <div id="conteneur">
+
+      <h1>Demo page for jquery.nimble.loader</h1>
+
+      <div id="introduction">
+        <p>
+          Read the article about jquery.nimble.loader on <a href="http://www.salesclic.com/le_coin_du_geek/jquery-nimble-loader/">www.salesclic.com</a>
+          <br/><br/>
+        </p>
+
+      </div>
+
+      <div id="loader1" class="container_loader">
+        <div id="loading1" class="nimbleLoader"></div>
+        <button class="showLoader">Show loading (<span id="nb_call">0</span>)</button>
+        <button class="hideLoader">Hide loading</button>
+        <div class="clearline"></div>
+      </div>
+
+      <div id="loader2" class="container_loader">
+        <div class="nimbleLoader"></div>
+        <label for="wiki_search">Search : </label>
+        <input type="text" id="wiki_search" value="Web" />
+        <br />
+        <br />
+        <button id="wikiSearchBtn">Search on Wikipedia</button>
+        <div class="clearline"></div>
+      </div>
+
+
+      <div id="loader4" class="container_loader">
+        <div class="nimbleLoader"></div>
+        <label for="counter">Count up to </label>
+        <input type="text" id="counter" size="3" value="5" />
+        <br />
+        <br />
+        <button id="btnCount">Start counting</button>
+        <div class="clearline"></div>
+      </div>
+
+      <div class="clearline"></div>
+
+      <br /><br />
+      <button id="bodyLoader">Simulate loading</button>
+
+      <div class="clearline"></div>
+    </div>
+
+  </body>
+</html>
+
