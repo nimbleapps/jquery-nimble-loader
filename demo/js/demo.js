@@ -8,7 +8,7 @@ $(document).ready(function(){
    ********************************************************************************************************************/
 
    // Params example 1
-  var params1 = {
+  var params = {
     loaderClass   : "loading_bar_1",
     debug         : true,
     speed         : 'fast',
@@ -16,20 +16,8 @@ $(document).ready(function(){
     zIndex        : 99
   };
 
-  // Params example 2
-  var params2 = {
-    loaderClass        : "loading_bar_body",
-    debug              : true,
-    speed              : 700,
-    needRelativeParent : false,
-    hasBackground      : true,
-    zIndex             : 999,
-    backgroundColor    : "#34383e",
-    backgroundOpacity  : 1
-  };
-
-  // Overwrite the default params : nimbleLoader will use param1 as default params
-  $.fn.nimbleLoader.setSettings(params1);
+  // Overwriting default params : nimbleLoader will use param1 as default options
+  $.fn.nimbleLoader.setSettings(params);
 
   /*********************************************************************************************************************
    * EXAMPLE 1 : SIMPLE EXAMPLE
@@ -38,7 +26,7 @@ $(document).ready(function(){
    ********************************************************************************************************************/
 
   var changeNbCall = function(action){
-    var $nbCall = $("#nb_call");
+    var $nbCall = $("#nb-call");
     var nbCall  = parseInt($nbCall.html());
     if(!isNaN(nbCall)){
       if(action === "up"){nbCall += 1;}
@@ -50,11 +38,15 @@ $(document).ready(function(){
   };
 
   // Init button of loader
-  $("#loader1 .showLoader").click(function(){
+  $("#loader1 .show-loader").click(function(){
     changeNbCall("up");
-    $("#loading1").nimbleLoader("show"); // No param is specified, it will use those we set during initialisation (param1)
+    $("#loading1").nimbleLoader("show",{
+      hasBackground: true,
+      backgroundColor: "#ffffff",
+      backgroundOpacity: "0.7"
+    }); // No param is specified, it will use default one (param1)
   });
-  $("#loader1 .hideLoader").click(function(){
+  $("#loader1 .hide-loader").click(function(){
     changeNbCall("down");
     $("#loading1").nimbleLoader("hide");
   });
@@ -64,9 +56,9 @@ $(document).ready(function(){
    * EXAMPLE 2 : AJAX REQUEST
    * Perform a search on Wikipedia
    ********************************************************************************************************************/
-  $("#wikiSearchBtn").click(function(){
-    var $loaderBox = $(this).prevAll(".nimbleLoader");
-    var toSearch   = $("#wiki_search").val();
+  $("#wiki-search-btn").click(function(){
+    var $loaderBox = $(this).prevAll(".nimble-loader");
+    var toSearch   = $("#wiki-search").val();
 
     // Empty the loaderBox
     $loaderBox.empty();
@@ -96,7 +88,7 @@ $(document).ready(function(){
               });
             }
             else{
-              $loaderBox.html("<p>no result found for '"+$("#wiki_search").val()+"'</p>");
+              $loaderBox.html("<p>no result found for '"+$("#wiki-search").val()+"'</p>");
             }
           }
         },
@@ -122,7 +114,7 @@ $(document).ready(function(){
     $(this).attr('disabled', 'disabled');
 
     // LoaderBox is the element which will receive the loading bar
-    var $loaderBox = $(this).prevAll(".nimbleLoader");
+    var $loaderBox = $(this).prevAll(".nimble-loader");
     var counter   = 1;
     var countUpTo = $("#counter").val();
 
@@ -130,13 +122,13 @@ $(document).ready(function(){
     $loaderBox.empty();
 
     // Add the span which will display the counter
-    $loaderBox.append("<span id='counterSpan'></span>");
+    $loaderBox.append("<span id='counter-span'>0</span>");
 
     // Define count function : count and hide loading bar when finished
     var countFct = function (){
       if(counter <= countUpTo){
         setTimeout(function(){
-          $loaderBox.find("#counterSpan").html(counter);
+          $loaderBox.find("#counter-span").html(counter);
           counter += 1;
           countFct();
         }, 1000);
@@ -144,12 +136,16 @@ $(document).ready(function(){
       else{
         // When counter has finished, we hide the loading bar
         $loaderBox.nimbleLoader("hide");
-        $("#btnCount").attr('disabled', '');
       }
     };
 
     // Show the loading bar before beginning counting
-    $loaderBox.nimbleLoader("show");
+    $loaderBox.nimbleLoader("show", {
+      callbackOnHiding:function(){
+        $loaderBox.find("#counter-span").remove();
+        $("#btnCount").attr('disabled', '');
+      }
+    });
 
     // Call count function
     countFct();
@@ -161,16 +157,51 @@ $(document).ready(function(){
   /*********************************************************************************************************************
    * EXAMPLE 4 : SIMULATE LOADING ON THE PAGE
    ********************************************************************************************************************/
-  function hideGlobalLoader(){
-    $("body").nimbleLoader("hide");
-  }
+  
 
-  $("#bodyLoader").click(function(){
-    $("body").nimbleLoader("show", params2);
-    setTimeout(hideGlobalLoader, 2000);
+  $("#btn-body-loader").click(function(){
+    $("body").nimbleLoader("show", {
+      position             : "fixed",
+      loaderClass          : "loading_bar_body",
+      debug                : true,
+      speed                : 700,
+      hasBackground        : true,
+      zIndex               : 999,
+      backgroundColor      : "#34383e",
+      backgroundOpacity    : 1
+    });
+    setTimeout(function hideGlobalLoader(){
+      $("body").nimbleLoader("hide");
+    }, 2000);
   });
-
-
+  
+  /*********************************************************************************************************************
+   * EXAMPLE 5 : INLINE LOADING
+   ********************************************************************************************************************/
+  $container5 = $("#loader5");
+  $container5.find("button").click(function(){
+    $thisBtn = $(this);
+    $thisBtn.hide();
+    
+    var $performLoading = $container5.find(".perform-loading");
+    $performLoading.show();
+    
+    var $loadingContainer = $container5.find(".perform-loading p");
+    $container5.find(".perform-loading p").nimbleLoader("show", {
+      loaderClass        : "loading_bar_inline",
+      hasBackground      : false,
+      overlay            : false,
+      loaderImgUrl       : "images/anim_wait_bar_mini_01.gif",
+      callbackOnHiding  : function(){
+        $thisBtn.show();
+        $performLoading.hide();
+        
+      }
+    });
+    
+    // To simulate an AJAX call which should have take 2 seconde :
+    setTimeout(function(){$loadingContainer.nimbleLoader("hide");}, 2000);
+  });
 });
 
 

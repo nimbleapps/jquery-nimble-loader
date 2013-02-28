@@ -1,14 +1,17 @@
 .loading_bar_1 {
-  position: absolute;
-  display: none;
+  height: 40px;
+  width: 40px;
   height: 100%;
   width: 100%;
   background: transparent url(../images/ajax-loader-1.gif) no-repeat 50% 50%;
 }
 
+.loading_bar_inline{
+  display: inline;
+  margin-left: 10px;
+}
+
 .loading_bar_body {
-  position: fixed;
-  display: none;
   height: 100%;
   width: 100%;
   top:0;

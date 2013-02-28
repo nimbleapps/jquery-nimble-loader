@@ -1,5 +1,5 @@
 body {
-  background-color:#f5f8fd;
+  background-color:#f3f3f3;
   color:#000000;
   font-family: "Tahoma", Arial, Helvetica, sans-serif;
   font-size:medium;
@@ -7,6 +7,7 @@ body {
   font-weight:normal;
   line-height:normal;
   letter-spacing:normal;
+  height: 100%;
 }
 h1,h2,h3,h4,h5 {
   font-family: "Georgia", "Times New Roman", "Times", serif;
@@ -58,65 +59,104 @@ li {
   margin-top:12px;
   background-color:#FFFFFF;
   color:#000000;
-  border:1px solid #a1a0a0;
+  border:1px solid #e6e6e6;
   font-size:0.8em;
-  padding:6px;
+  padding:10px;
 }
+
 
 #conteneur button{
-  display:block;
-  float:left;
-  border: 1px solid #000;
-  background:#609be8;
-  padding:3px 7px 3px 7px;
-  margin: 0 5px 5px 0;
+  font-size: 13px;
+  color: white;
   font-weight: bolder;
-  color:#fff;
-  height:auto;
+  padding: 0 10px 0 10px;
+  border: 0;
+  height: 27px;
+  line-height: 26px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 0;
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: "Arial", "Verdana", "sans-serif";
+  background-color: #00afe9;
+  float: left; 
+}
+#conteneur button:hover {
+  -moz-box-shadow: 0 1px 0 #d6d6d6;
+  -webkit-box-shadow: 0 1px 0 #d6d6d6;
+  box-shadow: 0 1px 0 #d6d6d6; 
+  background-color: #00b7f4;
 }
 
-#conteneur button:hover{
-  cursor:pointer;
-  background:#2375df;
-}
 
 #conteneur button:disabled{
   color:#eee;
-  background:#a4c5f2;
+  background:#4fd3ff;
 }
 
-#conteneur #bodyLoader{
+#conteneur #btn-body-loader{
   float: right;
 }
 
 
-.nimbleLoader{
+.nimble-loader{
   width:300px;
   height:250px;
-  border:1px solid black;
+  border:1px solid #e6e6e6;
   margin-bottom:10px;
   overflow:auto;
 }
 
-.container_loader{
-  width:300px;
-  float:left;
-  margin-right:10px;
+.nimble-loader-inline{
+  width: 10px;
+  height: 10px;
 }
 
-.container_loader button{
+.container-loader{
+  width:300px;
+  float:left;
+}
+
+.container-loader button{
   float:left;
   margin-right: 10px;
 }
 
-#counterSpan{
+#counter-span{
   display:block;
   width:100%;
-  
   color:#34383e;
   font-weight:bolder;
   font-size:100px;
   text-align:center;
+}
 
+.inline-example{
+  height: 40px;
+  margin-top: 100px;
+  float: right;
+  padding-left:20px;
+}
 
+#loader2{
+  margin: 0 31px
+}
+
+#loader2 #wiki-search{
+  width:60px;
+}
+
+#loader2 button, #loader3 button{
+  float: right;
+  margin-right: 0;
+}
+
+#loader5 .perform-loading{
+  display: none;
 }

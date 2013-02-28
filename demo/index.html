@@ -36,39 +36,53 @@
 
       </div>
 
-      <div id="loader1" class="container_loader">
-        <div id="loading1" class="nimbleLoader"></div>
-        <button class="showLoader">Show loading (<span id="nb_call">0</span>)</button>
-        <button class="hideLoader">Hide loading</button>
+      <div id="loader1" class="container-loader">
+        <div id="loading1" class="nimble-loader">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nibh arcu, consequat sed facilisis id, ultricies posuere felis.
+            Nullam libero magna, consectetur eu adipiscing in, molestie id nisl. Morbi vitae pellentesque diam. Proin ac ipsum quis sapien
+            vestibulum fermentum quis sit amet tellus. Suspendisse potenti. Fusce facilisis ipsum nec nisl egestas porttitor congue quam hendrerit.
+            Phasellus imperdiet adipiscing mauris sit amet mattis. Integer mattis ultricies dui, non bibendum arcu tempor pretium. Curabitur blandit
+            enim quis magna euismod semper. Morbi magna dolor, venenatis et sodales et, hendrerit sit amet mauris.
+          </p>
+        </div>
+        <button class="show-loader">Show loading (<span id="nb-call">0</span>)</button>
+        <button class="hide-loader">Hide loading</button>
         <div class="clearline"></div>
       </div>
 
-      <div id="loader2" class="container_loader">
-        <div class="nimbleLoader"></div>
-        <label for="wiki_search">Search : </label>
-        <input type="text" id="wiki_search" value="Web" />
-        <br />
-        <br />
-        <button id="wikiSearchBtn">Search on Wikipedia</button>
+      <div id="loader2" class="container-loader">
+        <div class="nimble-loader"></div>
+        <button id="wiki-search-btn">Search on Wikipedia</button>
+        <label for="wiki-search">Search</label>
+        <input type="text" id="wiki-search" value="Web" />
         <div class="clearline"></div>
       </div>
 
 
-      <div id="loader4" class="container_loader">
-        <div class="nimbleLoader"></div>
+      <div id="loader3" class="container-loader">
+        <div class="nimble-loader"></div>
         <label for="counter">Count up to </label>
         <input type="text" id="counter" size="3" value="5" />
-        <br />
-        <br />
         <button id="btnCount">Start counting</button>
         <div class="clearline"></div>
       </div>
 
       <div class="clearline"></div>
-
-      <br /><br />
-      <button id="bodyLoader">Simulate loading</button>
-
+      
+      <div id="loader4" class="inline-example">
+        <button id="btn-body-loader">Simulate loading on full page</button>
+      </div>
+      
+      <div id="loader5" class="inline-example">
+        <div class="perform-loading">
+          <p>Loading in progress</p>
+          <span class="nimble-loader-inline"></span>
+        </div>
+        <button>Simulate inline loading</button>
+        <div class="clearline"></div>
+      </div>
+      
       <div class="clearline"></div>
     </div>
 
