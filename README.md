@@ -77,3 +77,14 @@ See examples on <a target="_blank" href="http://www.salesclic.com/jquery.nimble.
 <h3>More information:</h3>
 
 <p>You will find more information on "how does it work" into the jquery.nimble.loader.js file</p>
+
+<h3>Disclaimer</h3>
+
+<p>
+  This plugin was originaly written by Christophe Laborier and published by Nimble Apps Limited. <a href="https://www.salesclic.com" target="_blank">www.salesclic.com</a>
+  <br /><br />
+  At the time of the publication, the core features of the plugin are fully functional. Yet, Nimble Apps does not consider it as complete. 
+  <br /><br />
+  We are sure that many enhancements can be made to the plugin and hope you will contribute to it.
+</p>
+
