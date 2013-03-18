@@ -1,6 +1,6 @@
 /**
- * nimbleLoader 2.0 - Display loading bar where you want with ease
- * Version 2.0
+ * nimbleLoader v2.0.0 - Display loading bar where you want with ease
+ * Version v2.0.0
  * @requires    jQuery v1.7.1
  * @description Display a loading bar in whatever block element you want
  *
